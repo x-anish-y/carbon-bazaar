@@ -1,73 +1,169 @@
-# Welcome to your Lovable project
+# 🌱 Carbon Bazaar
 
-## Project info
+**Carbon Bazaar** is a digital carbon credit trading platform designed to support **India’s upcoming Carbon Credit Trading Scheme (CCTS)** by creating an inclusive, transparent, and scalable carbon marketplace.  
+It bridges the gap between **industries seeking carbon credits** and **Indian farmers capable of generating them through climate-positive agricultural practices**.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 🚩 Problem Statement
 
-There are several ways of editing your application.
+India’s Carbon Credit Trading Scheme (CCTS) will mandate nearly **800 entities across 9 sectors** to meet emission reduction targets through carbon credit trading by 2026.
 
-**Use Lovable**
+However:
+- Industrial demand for carbon credits is rising rapidly
+- Indian farmers remain largely **excluded from the carbon economy**
+- Existing solutions are fragmented, intermediary-driven, and non-transparent
+- Carbon credit generation processes are complex and inaccessible for small farmers
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Without farmer inclusion, the carbon market risks becoming **industry-centric, supply-constrained, and socially disconnected**.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 💡 Solution Overview
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Carbon Bazaar** provides a unified digital platform that:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Enables **businesses** to buy verified, traceable carbon credits
+- Empowers **farmers** to generate and sell carbon credits through sustainable practices
+- Uses **AI-driven guidance** to simplify awareness, onboarding, and decision-making
+- Aligns **climate compliance, rural income generation, and sustainability**
 
-Follow these steps:
+The platform functions as a **two-sided marketplace** with trust, transparency, and inclusivity at its core.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## ✨ Unique Selling Points (USP)
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Farmers treated as **active market participants**, not beneficiaries
+- Integrated **carbon trading + farmer enablement** in one ecosystem
+- AI used for **education, awareness, and decision support**
+- Reduced dependence on brokers and intermediaries
+- Scalable foundation for an **inclusive Indian Carbon Market (ICM)**
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 🧑‍🌾 Farmer Benefits
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Stable secondary income independent of crop yield
+- Guided onboarding and local-language education
+- AI-based assessment of farming practices
+- Transparent pricing and direct access to verified buyers
+- Reduced reliance on intermediaries
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🏭 Business Benefits
 
-## What technologies are used for this project?
+- Reliable domestic supply of carbon credits for CCTS compliance
+- Transparent, traceable, and auditable transactions
+- Reduced regulatory and reputational risk
+- Stronger ESG and sustainability reporting
+- Farmer-linked climate impact narratives
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🏗️ Tech Stack
 
-## How can I deploy this project?
+### Overall Architecture
+- **Type:** Web-based full-stack application
+- **Pattern:** Monorepo (Frontend + Backend)
+- **Deployment:** Local / Optional cloud demo
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Frontend
+- React.js
+- JavaScript
+- CSS
+- React Context API
+- React Router
+- Recharts (Dashboards & charts)
+- i18next (Multilingual support)
 
-## Can I connect a custom domain to my Lovable project?
+### Backend
+- Node.js
+- Express.js
+- REST APIs
+- JWT Authentication
+- Role-based access (Farmer / Business)
 
-Yes, you can!
+### Database
+- PostgreSQL
+- Prisma ORM
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### AI & Recommendation Engine
+- Python
+- FastAPI
+- Rule-based + basic ML logic
+- pandas, numpy, scikit-learn (optional)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### AI Integration
+- Node.js backend communicates with Python FastAPI service via REST (JSON)
+
+---
+
+## 📊 Key Features
+
+- Carbon credit marketplace (fixed-price listings)
+- Farmer credit eligibility estimation
+- Business ESG dashboards
+- AI-powered recommendations
+- Multilingual & accessibility support
+- Secure authentication and role-based access
+- Transparent transaction records
+
+---
+
+## 🌍 Impact & Outcomes
+
+### Environmental Impact
+- Increased carbon sequestration through agriculture
+- Reduced pollution practices (e.g., stubble burning)
+- Supports national & global climate targets
+
+### Economic Impact
+- Diversified farmer income streams
+- Scalable domestic carbon credit supply
+
+### Social Impact
+- Inclusive growth by integrating farmers into climate markets
+- Shift from welfare dependence to self-earned income
+
+---
+
+## 🚀 Future Scope
+
+- Advanced MRV (Measurement, Reporting, Verification)
+- Blockchain-based credit traceability
+- Mobile app for farmers
+- Government and registry integrations
+- Advanced ML-based carbon estimation
+
+---
+
+## 🏆 Hackathon Context
+
+Built as part of **Code Byte 2.0**  
+Team Name: **Inexorable Redemption**
+
+---
+
+## 📜 License
+
+This project is developed for educational and hackathon purposes.  
+Licensing can be added as per future requirements.
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and improvements are welcome.  
+Feel free to fork the repository and raise a pull request.
+
+---
+
+## 📬 Contact
+
+For queries or collaboration, feel free to reach out via GitHub.
+
+---
+
+**Building an inclusive carbon economy for India.**
