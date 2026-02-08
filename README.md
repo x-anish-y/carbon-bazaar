@@ -1,5 +1,5 @@
 # 🌱 Carbon Bazaar
-![Carbon Bazaar Architecture](public/Screenshot 2026-02-06 072027.png)
+![Carbon Bazaar Architecture](public/Screenshot%202026-02-06%20072027.png)
 ### Where sustainable action becomes real financial empowerment
 
 Carbon Bazaar is a farmer-inclusive digital carbon credit trading platform built to support India’s upcoming **Carbon Credit Trading Scheme (CCTS – 2026)**. The platform connects regulated industries with Indian farmers in a transparent, compliant, and scalable carbon marketplace.
