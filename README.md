@@ -159,13 +159,3 @@ Revenue scales with real market activity while maintaining strong farmer incenti
 
 Carbon Bazaar transforms the Indian Carbon Market into a shared economic engine—  
 **industries meet compliance, farmers earn with dignity, and climate action delivers national impact.**
-
----
-
-## 📚 References
-
-- Bureau of Energy Efficiency (BEE) – Indian Carbon Market Framework  
-- Ministry of Power, Government of India – Carbon Credit Trading Scheme (CCTS)  
-- Lok Sabha – CCTS sectors and compliance mechanisms  
-- Environmental Defense Fund, academic agricultural reviews  
-
