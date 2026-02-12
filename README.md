@@ -26,8 +26,6 @@ There is a critical need for a **farmer-inclusive, user-friendly digital carbon 
 ## 💡 Core Idea
 
 **Carbon Bazaar** is a two-sided digital carbon credit marketplace that:
-![Carbon Bazaar Architecture](public/Screenshot%202026-02-06%20072904.png)
-![Carbon Bazaar Architecture](public/Screenshot%202026-02-06%20073304.png)
 - Enables businesses to buy verified carbon credits for CCTS compliance  
 - Empowers farmers to generate and sell credits through climate-positive agricultural practices  
 - Uses local-language education, guided workflows, and AI-driven insights  
@@ -98,12 +96,14 @@ There is a critical need for a **farmer-inclusive, user-friendly digital carbon 
 - Partnerships with FPOs, cooperatives, SHGs  
 - Tie-ups with agri-tech platforms and NGOs  
 - Vernacular digital outreach (WhatsApp, SMS, mobile-first web)  
-- On-ground enablement via trusted local networks  
+- On-ground enablement via trusted local networks  <br><br>
+![Carbon Bazaar Architecture](public/Screenshot%202026-02-06%20072904.png)
 
 ### Businesses
 - Direct outreach to CCTS-regulated industries  
 - Partnerships with industry associations and ESG consultants  
-- Engagement through policy forums and climate-tech events  
+- Engagement through policy forums and climate-tech events  <br><br>
+![Carbon Bazaar Architecture](public/Screenshot%202026-02-06%20073304.png)
 
 ---
 
