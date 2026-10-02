@@ -13,45 +13,6 @@
 
 ---
 
-## 📸 Platform Preview & Website Screenshots
-
-### 1. Landing Page & Hero Overview
-![Carbon Bazaar Landing Page](public/screenshots/01-landing-hero.png)
-*Modern, high-conversion landing page presenting value propositions for both smallholder farmers and CCTS-obligated industrial buyers.*
-
----
-
-### 2. Live Carbon Credit Marketplace
-![Live Carbon Credit Marketplace](public/screenshots/02-marketplace.png)
-*Interactive trading terminal featuring real-time Indian agricultural carbon credit batches (priced in ₹ INR/tCO2e), vintage years, satellite verification badges, and direct negotiation mechanisms.*
-
----
-
-### 3. Farmer & Agricultural Seller Portal
-![Farmer & Seller Dashboard](public/screenshots/05-farmer-seller-dashboard.png)
-*Dedicated seller console enabling farmers and FPOs (Farmer Producer Organizations) to tokenize carbon credits, monitor active listings, view wallet balances, and track direct bank payouts.*
-
----
-
-### 4. Corporate Buyer & ESG Compliance Hub
-![Corporate Buyer Dashboard](public/screenshots/06-buyer-company-dashboard.png)
-*Enterprise dashboard tailored for heavy industry procurement officers (Steel, Cement, Power, Chemicals) to manage CCTS compliance quotas, portfolio holdings, and automated carbon retirements.*
-
----
-
-### 5. Administrative Control & Verification Center
-![Admin Dashboard](public/screenshots/07-admin-dashboard.png)
-*Central governance console for land parcel verification, MRV audits, document approvals, trade settlements, and market health metrics.*
-
----
-
-### 6. Seamless Authentication & Onboarding
-| Secure Multi-Role Login | Role-Based User Registration |
-| :---: | :---: |
-| ![Login](public/screenshots/03-login.png) | ![Register](public/screenshots/04-register.png) |
-
----
-
 ## 📌 Problem Statement
 
 India is operationalizing its **Carbon Credit Trading Scheme (CCTS) by 2026**, covering over **800 industrial entities across 9 energy-intensive sectors** (including Iron & Steel, Cement, Pulp & Paper, Chlor-Alkali, Aluminum, and Thermal Power).
@@ -67,32 +28,132 @@ While corporate demand for compliant carbon offsets is projected to surge expone
 ## 💡 The Carbon Bazaar Solution
 
 **Carbon Bazaar** bridges this critical gap through a two-sided digital ecosystem powered by **Satellite Remote Sensing (MRV)**, **EVM Smart Contracts**, and **Direct Indian Banking (INR via Razorpay)**:
-
-```
-+-------------------------------------------------------------------------------------------------+
-|                                        CARBON BAZAAR                                            |
-+------------------------------------+-----------------------------------+------------------------+
-|       FARMERS & AGRI SELLERS       |      INTELLIGENCE & SETTLEMENT    |   REGULATED BUYERS     |
-+------------------------------------+-----------------------------------+------------------------+
-| - GPS Land Parcel Boundary         |  🛰️ Sentinel-Hub Satellite MRV    | - CCTS Compliance      |
-| - Climate-Smart Farm Practices     |  🌱 Automated NDVI Vegetation     | - Bulk Batch Orders    |
-| - Zero Stubble Burning             |  ⛓️ EVM Smart Contract Minting    | - Price Negotiation    |
-| - Agroforestry & Biochar           |  🇮🇳 Razorpay INR Escrow Payouts   | - On-chain Retirement  |
-+------------------------------------+-----------------------------------+------------------------+
-```
+- **For Farmers & FPOs**: Turn climate-smart farming into direct secondary income with guided onboarding, satellite assessment, and transparent bank payouts.
+- **For Regulated Businesses**: Source verified, domestic, high-integrity carbon credits to meet CCTS compliance obligations and ESG goals.
+- **For the Environment**: Mitigate crop stubble burning, enrich soil organic carbon, and reduce agricultural methane emissions.
 
 ---
 
 ## 🏛️ System Architecture
 
-![Carbon Bazaar Architecture](public/Screenshot%202026-02-06%20072027.png)
+The following UML Component Diagram illustrates the end-to-end technical architecture of Carbon Bazaar across presentation, application gateway, external service integrations, and persistence layers:
 
-### End-to-End Operational Flow
-![Farmer Enablement](public/Screenshot%202026-02-06%20072904.png)
-*Farmer onboarding, satellite validation, credit issuance, and vernacular empowerment.*
+```mermaid
+graph TB
+    subgraph Client_Layer["🖥️ Presentation & Client Layer (Next.js 16 + React 19)"]
+        FarmerUI["🌾 Farmer / Seller Portal<br/>(/seller/dashboard)"]
+        BuyerUI["🏭 Corporate Buyer Portal<br/>(/buyer/dashboard)"]
+        MarketplaceUI["🛒 Carbon Marketplace<br/>(/marketplace)"]
+        AdminUI["🛡️ Admin Verification Suite<br/>(/admin/dashboard)"]
+    end
 
-![Corporate Buyer Compliance](public/Screenshot%202026-02-06%20073304.png)
-*Corporate procurement, bidding, contract fulfillment, and certificate generation.*
+    subgraph API_Layer["⚙️ Application & API Gateway (Next.js App Router)"]
+        AuthMiddleware["🔐 Auth & RBAC Middleware<br/>(JWT, Bcrypt, Role Guards)"]
+        ListingService["📋 Listings & Negotiation API<br/>(/api/listings, /api/trade-offers)"]
+        MRVService["🛰️ Land Verification & MRV API<br/>(/api/land-verifications)"]
+        PaymentService["💳 Payments & Escrow API<br/>(/api/payments, Razorpay Webhooks)"]
+        BlockchainService["⛓️ Blockchain Bridge Service<br/>(Ethers.js v6 Wallet Manager)"]
+    end
+
+    subgraph External_Services["🌐 External Integrations & Infrastructure"]
+        SentinelHub["🛰️ Sentinel Hub API<br/>(Multi-spectral Imagery & NDVI Index)"]
+        GoogleMaps["📍 Google Maps & Latlong.ai<br/>(Geocoding & Rural Land Resolution)"]
+        Razorpay["🇮🇳 Razorpay Payment Gateway<br/>(INR Escrow Orders & Payouts)"]
+        EVMChain["⛓️ EVM Blockchain / Sepolia<br/>(Solidity: CarbonCreditBatch.sol)"]
+    end
+
+    subgraph Data_Layer["🗄️ Persistence Layer (MongoDB Atlas)"]
+        UsersCol[("Users & Wallets Collection")]
+        ListingsCol[("Carbon Listings Collection")]
+        BatchesCol[("Carbon Batches & Tokens Collection")]
+        VerificationsCol[("Land Verifications Collection")]
+        TradesCol[("Trade Offers & Negotiations Collection")]
+    end
+
+    %% Client Connections
+    FarmerUI --> AuthMiddleware
+    BuyerUI --> AuthMiddleware
+    MarketplaceUI --> ListingService
+    AdminUI --> AuthMiddleware
+
+    %% Internal Routing
+    AuthMiddleware --> ListingService
+    AuthMiddleware --> MRVService
+    AuthMiddleware --> PaymentService
+    AuthMiddleware --> BlockchainService
+
+    %% External Integrations
+    MRVService --> SentinelHub
+    MRVService --> GoogleMaps
+    PaymentService --> Razorpay
+    BlockchainService --> EVMChain
+
+    %% Persistence
+    ListingService --> ListingsCol
+    ListingService --> TradesCol
+    MRVService --> VerificationsCol
+    BlockchainService --> BatchesCol
+    AuthMiddleware --> UsersCol
+```
+
+---
+
+## 🔄 End-to-End Operational Flow
+
+The following UML Sequence Diagram details the complete lifecycle—from initial farmer onboarding and satellite verification to batch tokenization, bilateral negotiation, escrow settlement, and on-chain credit retirement:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Farmer as 👨‍🌾 Farmer / Seller
+    participant Web as 💻 Carbon Bazaar Web
+    participant Backend as ⚙️ Platform Engine & API
+    participant Sentinel as 🛰️ Sentinel Hub MRV
+    participant Chain as ⛓️ EVM Smart Contract
+    participant Razorpay as 💳 Razorpay Gateway
+    actor Buyer as 🏭 Corporate Buyer
+
+    %% Phase 1: Onboarding & Land Verification
+    rect rgb(240, 248, 255)
+    Note over Farmer, Sentinel: Phase 1: Land Onboarding & Satellite MRV
+    Farmer->>Web: Register land parcel & upload survey details
+    Web->>Backend: Submit land verification request
+    Backend->>Sentinel: Request satellite multispectral imagery & NDVI index
+    Sentinel-->>Backend: Return NDVI vegetation score & biomass indicators
+    Backend->>Backend: Evaluate soil organic carbon & calculate eligible credits
+    end
+
+    %% Phase 2: Tokenization & Listing
+    rect rgb(245, 255, 245)
+    Note over Farmer, Chain: Phase 2: Batch Tokenization & Marketplace Listing
+    Farmer->>Web: Mint & list carbon credits (set volume & INR price)
+    Web->>Backend: Trigger tokenization request
+    Backend->>Chain: mintBatch(farmerAddress, batchId, amount, metadataURI)
+    Chain-->>Backend: Token ID & on-chain transaction hash
+    Backend->>Web: Publish active listing on Carbon Marketplace
+    end
+
+    %% Phase 3: Discovery & Negotiation
+    rect rgb(255, 250, 240)
+    Note over Buyer, Farmer: Phase 3: Marketplace Discovery & Negotiation
+    Buyer->>Web: Browse marketplace & filter by state/crop/compliance
+    Buyer->>Web: Submit trade offer / negotiate price per credit
+    Web->>Farmer: Notify seller of counter-offer via real-time messaging
+    Farmer->>Web: Accept agreed terms
+    end
+
+    %% Phase 4: Payment, Settlement & Retirement
+    rect rgb(255, 245, 245)
+    Note over Buyer, Chain: Phase 4: Payment Escrow, Settlement & On-Chain Retirement
+    Buyer->>Razorpay: Pay agreed amount in INR (via NetBanking / UPI / Corporate Card)
+    Razorpay-->>Backend: Payment verified webhook signature
+    Backend->>Chain: transferBatch(sellerAddress, buyerAddress, batchId, amount)
+    Chain-->>Backend: Transfer confirmed on-chain
+    Backend->>Razorpay: Disburse payout directly to Farmer's verified bank account
+    Buyer->>Chain: retireCredits(batchId, amount, cctsEntityRegistrationId)
+    Chain-->>Buyer: Proof of burn & immutable retirement certificate issued
+    end
+```
 
 ---
 
@@ -151,11 +212,8 @@ carbon-bazaar/
 │   ├── hardhat.config.js          # Hardhat network & EVM configuration
 │   └── package.json
 ├── public/                        # Static assets & media
-│   ├── media/                     # Project illustration images & logos
-│   ├── screenshots/               # Full-resolution platform UI screenshots
-│   └── Screenshot *.png           # Architecture & workflow schematics
+│   └── media/                     # Project illustration images & logos
 ├── scripts/                       # Database seed & utility automation
-│   ├── capture-all-screenshots.js # Automated Puppeteer UI screenshot capture
 │   └── seed-marketplace.js        # Realistic Indian carbon market database seeder
 ├── seeds/                         # Mock market data & initial configurations
 ├── src/
@@ -191,7 +249,6 @@ carbon-bazaar/
 - **Node.js**: v18.18.0 or higher (v20+ recommended)
 - **npm** or **yarn** / **pnpm**
 - **MongoDB Atlas** cluster or local MongoDB instance (v6.0+)
-- **Google Chrome** (for automated headless screenshots & testing)
 
 ---
 
@@ -290,18 +347,6 @@ npx hardhat node
 # In a new terminal, deploy contracts to local network
 npx hardhat run scripts/deploy.js --network localhost
 ```
-
----
-
-### 7. (Optional) Re-Capture Platform Screenshots
-
-To capture freshly rendered, high-resolution platform screenshots using the automated Puppeteer script:
-
-```bash
-node scripts/capture-all-screenshots.js
-```
-
-Screenshots will be output directly to `public/screenshots/`.
 
 ---
 

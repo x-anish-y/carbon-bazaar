@@ -681,7 +681,7 @@ function EnhancedListingCard({
           <div className="flex justify-between">
             <span className="text-white/60">Available Inventory:</span>
             <span className="font-bold text-[#DDA15E]">
-              {listing.availableCredits.toLocaleString()} tCO2e
+              {(listing.creditsAvailable ?? listing.creditsAmount ?? 0).toLocaleString("en-IN")} tCO2e
             </span>
           </div>
           <div className="flex justify-between">
