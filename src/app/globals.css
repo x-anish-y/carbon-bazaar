@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ivory: #FAF8F2;
+  --color-ivory-dark: #F0EDE4;
+  --color-forest: #1B4332;
+  --color-forest-dark: #0B1F17;
+  --color-forest-light: #2D6A4F;
+  --color-forest-muted: #3A5A40;
+  --color-olive: #606C38;
+  --color-wheat-gold: #DDA15E;
+  --color-soil-brown: #6B4226;
+  --color-cream: #FEFAE0;
+
+  --font-display: var(--font-playfair-display), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #FAF8F2;
+  --foreground: #0B1F17;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAF8F2;
+  color: #0B1F17;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Typography & Display ─── */
+.font-display {
+  font-family: var(--font-playfair-display), Georgia, serif;
+}
+
+/* ─── Pill Buttons ─── */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-pill-solid {
+  background-color: #1B4332;
+  color: #ffffff;
+  box-shadow: 0 4px 14px 0 rgba(27, 67, 50, 0.25);
+}
+.btn-pill-solid:hover {
+  background-color: #2D6A4F;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(27, 67, 50, 0.35);
+}
+
+.btn-pill-ghost {
+  background-color: transparent;
+  color: #1B4332;
+  border: 1.5px solid #1B4332;
+}
+.btn-pill-ghost:hover {
+  background-color: #1B4332;
+  color: #ffffff;
+}
+
+.btn-pill-ghost-white {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+.btn-pill-ghost-white:hover {
+  background-color: #ffffff;
+  color: #0B1F17;
+  border-color: #ffffff;
+}
+
+/* ─── Eyebrow Labels ─── */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #606C38;
+}
+
+/* ─── Fallback backgrounds ─── */
+.bg-ivory { background-color: #FAF8F2; }
+.bg-ivory-dark { background-color: #F0EDE4; }
+.bg-forest { background-color: #1B4332; }
+.bg-forest-dark { background-color: #0B1F17; }
+.bg-forest-light { background-color: #2D6A4F; }
+.bg-forest-muted { background-color: #3A5A40; }
+.bg-olive { background-color: #606C38; }
+.bg-wheat-gold { background-color: #DDA15E; }
+.bg-soil-brown { background-color: #6B4226; }
+.bg-cream { background-color: #FEFAE0; }
+
+.text-ivory { color: #FAF8F2; }
+.text-forest { color: #1B4332; }
+.text-forest-dark { color: #0B1F17; }
+.text-forest-light { color: #2D6A4F; }
+.text-wheat-gold { color: #DDA15E; }
+.text-soil-brown { color: #6B4226; }
+.text-olive { color: #606C38; }
+
+.border-forest { border-color: #1B4332; }
+.border-forest-dark { border-color: #0B1F17; }
+.border-wheat-gold { border-color: #DDA15E; }
+
+html {
+  scroll-behavior: smooth;
 }

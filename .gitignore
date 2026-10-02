@@ -1,7 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules/
+contracts/artifacts/
+contracts/cache/
+contracts/typechain/
+contracts/typechain-types/
 /.pnp
 .pnp.*
 .yarn/*
@@ -32,6 +36,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+!.env.local.example
+
+.vscode/
 
 # vercel
 .vercel
