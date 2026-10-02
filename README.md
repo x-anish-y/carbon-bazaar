@@ -157,6 +157,45 @@ sequenceDiagram
 
 ---
 
+## 📸 Platform Interface & Screenshots
+
+### 1. Landing Page & Hero Overview
+![Carbon Bazaar Landing Page](public/screenshots/01-landing-hero.png)
+*Modern landing page presenting dual-sided value propositions for Indian smallholder farmers and CCTS-obligated industrial buyers.*
+
+---
+
+### 2. Live Carbon Credit Marketplace
+![Live Carbon Credit Marketplace](public/screenshots/02-marketplace.png)
+*Interactive trading terminal featuring real-time Indian agricultural carbon credit batches (priced in ₹ INR/tCO2e), vintage years, satellite verification badges, and direct negotiation mechanisms.*
+
+---
+
+### 3. Farmer & Agricultural Seller Portal
+![Farmer & Seller Dashboard](public/screenshots/05-farmer-seller-dashboard.png)
+*Dedicated seller console enabling farmers and FPOs to tokenize carbon credits, monitor active listings, view wallet balances, and track direct bank payouts.*
+
+---
+
+### 4. Corporate Buyer & ESG Compliance Hub
+![Corporate Buyer Dashboard](public/screenshots/06-buyer-company-dashboard.png)
+*Enterprise dashboard tailored for heavy industry procurement officers (Steel, Cement, Power, Chemicals) to manage CCTS compliance quotas, portfolio holdings, and automated carbon retirements.*
+
+---
+
+### 5. Administrative Control & Verification Center
+![Admin Dashboard](public/screenshots/07-admin-dashboard.png)
+*Central governance console for land parcel verification, MRV audits, document approvals, trade settlements, and market health metrics.*
+
+---
+
+### 6. Seamless Multi-Role Authentication & Onboarding
+| Secure Multi-Role Login | Role-Based User Registration |
+| :---: | :---: |
+| ![Login](public/screenshots/03-login.png) | ![Register](public/screenshots/04-register.png) |
+
+---
+
 ## ✨ Core Features & Technical Highlights
 
 ### 🛰️ 1. Satellite MRV & Geocoding Engine
